@@ -27,8 +27,11 @@ jobs:
       - name: npm paketlarini o'rnatish
         run: npm install
 
+      - name: Capacitor ruxsatini berish
+        run: chmod +x ./node_modules/.bin/cap
+
       - name: Capacitor fayllarni ko'chirish
-        run: npx cap copy android
+        run: ./node_modules/.bin/cap copy android
 
       - name: Android APK qurish
         run: |
