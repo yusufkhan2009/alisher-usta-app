@@ -30,8 +30,8 @@ jobs:
       - name: Capacitor ruxsatini berish
         run: chmod +x ./node_modules/.bin/cap
 
-      - name: Capacitor fayllarni ko'chirish
-        run: ./node_modules/.bin/cap copy android
+      - name: Capacitor fayllarni ko'chirish va sinxronlash
+        run: ./node_modules/.bin/cap sync android
 
       - name: Android APK qurish
         run: |
