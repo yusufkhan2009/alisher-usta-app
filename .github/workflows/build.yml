@@ -1,0 +1,43 @@
+name: Build AlisherUsta APK
+
+on:
+  push:
+    branches: [ main ]
+  workflow_dispatch:
+
+jobs:
+  build-android:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout kodni yuklab olish
+        uses: actions/checkout@v4
+
+      - name: Node.js o'rnatish
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Java o'rnatish (Android uchun)
+        uses: actions/setup-java@v4
+        with:
+          distribution: 'temurin'
+          java-version: '17'
+
+      - name: npm paketlarini o'rnatish
+        run: npm install
+
+      - name: Capacitor fayllarni ko'chirish
+        run: npx cap copy android
+
+      - name: Android APK qurish
+        run: |
+          cd android
+          chmod +x gradlew
+          ./gradlew assembleDebug
+
+      - name: APK faylini saqlash
+        uses: actions/upload-artifact@v4
+        with:
+          name: AlisherUsta-APK
+          path: android/app/build/outputs/apk/debug/app-debug.apk
