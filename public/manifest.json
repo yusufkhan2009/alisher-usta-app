@@ -1,0 +1,18 @@
+{
+    "name": "Alisher Usta Hisob-Kitob",
+    "short_name": "Alisher Usta",
+    "description": "Svarchik ustalar uchun shogirdlar va zakazlar hisob-kitobi tizimi",
+    "start_url": "index.html",
+    "display": "standalone",
+    "background_color": "#0b0f19",
+    "theme_color": "#121826",
+    "orientation": "portrait-primary",
+    "icons": [
+        {
+            "src": "https://cdn-icons-png.flaticon.com/512/3203/3203534.png",
+            "sizes": "512x512",
+            "type": "image/png",
+            "purpose": "any maskable"
+        }
+    ]
+}
