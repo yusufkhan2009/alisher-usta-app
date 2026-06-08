@@ -16,7 +16,7 @@ jobs:
       - name: Node.js o'rnatish
         uses: actions/setup-node@v4
         with:
-          node-version: '20'
+          node-version: '22'
 
       - name: Java o'rnatish (Android uchun)
         uses: actions/setup-java@v4
