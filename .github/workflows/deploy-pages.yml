@@ -27,6 +27,8 @@ jobs:
 
       - name: GitHub Pages sozlash
         uses: actions/configure-pages@v5
+        with:
+          enablement: true
 
       - name: Public papkasini yuklash
         uses: actions/upload-pages-artifact@v3
